@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   def index
-    @tasks = current_user.tasks.order(created_at: :desc)
+    @tasks = current_user.tasks.undone.order(created_at: :desc)
   end
 
   def new
@@ -35,6 +35,16 @@ class TasksController < ApplicationController
     @task = current_user.tasks.find(params[:id])
     @task.destroy!
     redirect_to tasks_path, success: 'タスクを削除しました'
+  end
+
+  def done
+    @tasks = current_user.tasks.done.order(created_at: :desc)
+    render :index
+  end
+
+  def all
+    @tasks = current_user.tasks.order(created_at: :desc)
+    render :index
   end
 
   private

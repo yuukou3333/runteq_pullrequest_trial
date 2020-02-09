@@ -1,6 +1,17 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 offset-lg-3">
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <%= link_to '未完了', tasks_path, class: "nav-link #{active_action?('index')}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '完了', done_tasks_path, class: "nav-link #{active_action?('done')}" %>
+        </li>
+        <li class="nav-item">
+          <%= link_to '全て', all_tasks_path, class: "nav-link #{active_action?('all')}" %>
+        </li>
+      </ul>
       <%= render @tasks %>
     </div>
   </div>
