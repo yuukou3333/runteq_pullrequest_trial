@@ -2,8 +2,11 @@ ja:
   activerecord:
     models:
       user: 'ユーザー'
+      task: 'タスク'
     attributes:
       user:
         email: 'メールアドレス'
         password: 'パスワード'
         password_confirmation: 'パスワード確認'
+      task:
+        content: 'タスク'

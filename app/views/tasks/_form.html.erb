@@ -1,0 +1,8 @@
+<%= form_with model: task, local: true do |f| %>
+  <div class="form-group">
+    <%= f.label :content %>
+    <%= f.text_field :content, class: 'form-control' %>
+  </div>
+  <% button_text = task.new_record? ? '作成' : '更新' %>
+  <%= f.submit button_text, class: 'btn btn-primary' %>
+<% end %>
