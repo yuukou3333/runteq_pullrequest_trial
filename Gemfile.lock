@@ -205,6 +205,8 @@ GEM
       rspec-mocks (~> 3.9.0)
       rspec-support (~> 3.9.0)
     rspec-support (3.9.0)
+    rspec_junit_formatter (0.4.1)
+      rspec-core (>= 2, < 4, != 2.12.0)
     rubocop (0.75.1)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -212,6 +214,8 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 1.7)
+    rubocop-checkstyle_formatter (0.4.0)
+      rubocop (>= 0.35.1)
     rubocop-rails (2.3.2)
       rack (>= 1.1)
       rubocop (>= 0.72.0)
@@ -299,7 +303,9 @@ DEPENDENCIES
   rails (~> 5.2.3)
   rails-i18n
   rspec-rails
+  rspec_junit_formatter
   rubocop
+  rubocop-checkstyle_formatter
   rubocop-rails
   sass-rails (~> 5.0)
   sorcery
