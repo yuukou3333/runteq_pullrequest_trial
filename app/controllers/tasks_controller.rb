@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
   def index
-    @tasks = current_user.tasks.undone.order(created_at: :desc)
+    @q = current_user.tasks.undone.order(created_at: :desc).ransack(params[:q])
+    @tasks = @q.result(distinct: true)
   end
 
   def new
@@ -38,12 +39,15 @@ class TasksController < ApplicationController
   end
 
   def done
-    @tasks = current_user.tasks.done.order(created_at: :desc)
+    @q = current_user.tasks.done.order(created_at: :desc).ransack(params[:q])
+    @tasks = @q.result(distinct: true)
+    # @tasks = current_user.tasks.done.order(created_at: :desc)
     render :index
   end
 
   def all
-    @tasks = current_user.tasks.order(created_at: :desc)
+    @q = current_user.tasks.order(created_at: :desc).ransack(params[:q])
+    @tasks = @q.result(distinct: true)
     render :index
   end
 

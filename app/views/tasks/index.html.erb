@@ -1,6 +1,15 @@
 <div class="container">
   <div class="row">
     <div class="col-lg-6 offset-lg-3">
+      <%= search_form_for @q, url: request.path_info do |f| %>
+        <div class="input-group mb-3">
+          <%= f.search_field :content_cont, class: 'form-control', placeholder: '検索ワード' %>
+          <div class="input-group-append">
+            <%= f.submit class: 'btn btn-primary' %>
+          </div>
+        </div>
+      <% end %>
+
       <ul class="nav nav-tabs">
         <li class="nav-item">
           <%= link_to '未完了', tasks_path, class: "nav-link #{active_action?('index')}" %>
