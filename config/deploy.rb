@@ -5,7 +5,7 @@ set :application, 'runteq_school'
 set :repo_url, 'git@github.com:runteq/runteq_trial_curriculum.git'
 
 # Default branch is :master
-set :branch, ENV['BRANCH'] || 'master'
+set :branch, ENV['BRANCH'] || 'deploy'
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/runteq_trial'
@@ -23,7 +23,7 @@ set :deploy_to, '/var/www/runteq_trial'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w[config/database.yml]
+set :linked_files, %w[config/database.yml config/master.key]
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w[bin log tmp/pids tmp/cache tmp/sockets vendor/bundle node_modules public/uploads]
