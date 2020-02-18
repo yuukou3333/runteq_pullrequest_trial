@@ -5,10 +5,10 @@ class Task < ApplicationRecord
   validates :content, presence: true, length: { maximum: 100 }
 
   def done!
-    update(done_at: Time.current)
+    update!(done_at: Time.current)
   end
 
   def undone!
-    update(done_at: nil)
+    update!(done_at: nil)
   end
 end
