@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2020_02_09_071618) do
 
-  create_table "tasks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id", null: false
+  create_table "tasks", force: :cascade do |t|
+    t.integer "user_id", null: false
     t.text "content", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2020_02_09_071618) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
@@ -30,5 +30,4 @@ ActiveRecord::Schema.define(version: 2020_02_09_071618) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "tasks", "users"
 end
