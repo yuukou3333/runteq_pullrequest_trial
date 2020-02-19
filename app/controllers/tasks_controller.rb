@@ -41,7 +41,6 @@ class TasksController < ApplicationController
   def done
     @q = current_user.tasks.done.order(created_at: :desc).ransack(params[:q])
     @tasks = @q.result(distinct: true)
-    # @tasks = current_user.tasks.done.order(created_at: :desc)
     render :index
   end
 

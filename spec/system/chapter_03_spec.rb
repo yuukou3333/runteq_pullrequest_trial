@@ -9,6 +9,7 @@ RSpec.describe '【課題】タスクの絞り込み機能', type: :system do
     create(:task, content: 'インフラの勉強をする', user: user)
     login_as(user)
   end
+
   it '未完了タブでの絞り込みが正しく機能していること' do
     visit '/tasks'
     fill_in 'q[content_cont]', with: 'Ruby'
