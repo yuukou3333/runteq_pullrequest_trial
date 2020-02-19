@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_02_08_112615) do
     t.index ["user_id"], name: "index_tasks_on_user_id"
   end
 
-  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+  create_table "users", force: :cascade do |t|
     t.string "email", null: false
     t.string "crypted_password"
     t.string "salt"
