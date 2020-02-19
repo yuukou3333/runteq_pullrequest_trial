@@ -11,10 +11,6 @@ RUNTEQのお試しカリキュラムのリポジトリ
 
 - 5.2.3
 
-## Database version
-
-- MySQL 5.7
-
 ## Project initiation
 
 - Gemのインストール
