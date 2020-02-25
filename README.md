@@ -1,39 +1,31 @@
-# README
-RUNTEQのお試しカリキュラムのリポジトリ
+このカリキュラムではRuby`2.6.4`とRails`5.2.3`を使用します。  
+rbenvを使用して指定されたバージョンのRubyを使ってください。
 
-## Features
+## プロジェクトのセットアップ手順
+ターミナルでgit cloneして作成されたフォルダに移動して、下記のコマンドを実行してください
 
-### Ruby Version
-
-- 2.6.4
-
-## Rails version
-
-- 5.2.3
-
-## Project initiation
-
-- Gemのインストール
-
+- このプロジェクトで使用するRubyのライブラリをインストール
 ```bash
 $ bundle install --path vendor/bundle
 ```
 
-- データベース設定ファイルの作成
+- データベースの設定を雛形のdefaultファイルをコピーして作成
 
 ```bash
 $ cp config/database.yml.default config/database.yml
 ```
 
 
-- データベースの作成
+- データベースおよびテーブルの作成
 
 ```bash
 $ bundle exec rails db:setup
 ```
 
-- rails serverの実行
+- rails serverコマンドによるサーバーの起動
 
 ```bash
 $ bundle exec rails server
 ```
+
+- 以上のコマンドが正しく実行できた場合、ブラウザでlocalhost:3000にアクセスして起動したサーバにアクセスしましょう。
