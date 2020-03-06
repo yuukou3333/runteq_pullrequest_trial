@@ -1,7 +1,7 @@
 # config valid only for current version of Capistrano
 lock '3.12.0'
 
-set :application, 'runteq_school'
+set :application, 'runteq_trial'
 set :repo_url, 'git@github.com:runteq/runteq_trial_curriculum.git'
 
 # Default branch is :master
@@ -23,7 +23,7 @@ set :deploy_to, '/var/www/runteq_trial'
 # set :pty, true
 
 # Default value for :linked_files is []
-set :linked_files, %w[config/database.yml config/master.key]
+set :linked_files, %w[config/database.yml config/master.key db/runteq_trial_production.sqlite3]
 
 # Default value for linked_dirs is []
 set :linked_dirs, %w[bin log tmp/pids tmp/cache tmp/sockets vendor/bundle node_modules public/uploads]
