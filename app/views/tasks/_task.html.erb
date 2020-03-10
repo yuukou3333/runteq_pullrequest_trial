@@ -1,0 +1,16 @@
+<div class="card mb-3" id="task-<%= task.id %>">
+  <div class="card-body">
+    <div class="d-flex justify-content-between align-items-center">
+      <div><%= task.content %></div>
+      <div>
+        <% if task.done_at.present? %>
+          <%= link_to '未完了状態にする', task_done_path(task), class: 'btn btn-primary btn-sm', method: :delete %>
+        <% else %>
+          <%= link_to '完了状態にする', task_done_path(task), class: 'btn btn-primary btn-sm', method: :post %>
+        <% end %>
+        <%= link_to '編集', edit_task_path(task), class: 'btn btn-success btn-sm' %>
+        <%= link_to '削除', task_path(task), class: 'btn btn-danger btn-sm', method: :delete, data: { confirm: '削除しますか？' } %>
+      </div>
+    </div>
+  </div>
+</div>
